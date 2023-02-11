@@ -6,7 +6,19 @@
   background-repeat: no-repeat;
   background-size: 80vmin;
   background-attachment: fixed;
-  font-size: clamp(0.5em, 2vmin, 1.5em);
+  font-size: clamp(0.5em, 2vmin, 10em);
+}
+
+h1{
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3{
+  font-size: 1.75rem;
 }
 
 .container{
@@ -35,7 +47,7 @@
   background-position: -90% !important;
   background: #00000080;
   color: white;
-  height: 70vh;
+  height: 80vh;
 }
 
 h1 > span{
@@ -95,30 +107,89 @@ code:hover{
   border: thick solid #c158dc;
 }
 
+article > *:not(.links){
+  text-align: center;
+}
+
 .links{
+  flex-direction: row;
   display: flex;
   justify-content: space-around;
 }
 
 .links > a{
-  background: radial-gradient(#f50057, #ffab00);
-  background-size:200% 200%;
-  background-position: bottom left;
-  background-clip: text;
-  -webkit-background-clip: text;
+  padding: 0.5em;
+  flex-grow: 1;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(50deg, #f50057 , #ffab00 50%, #ffab00bb 50%,#ffab00bb 52%,#00000000 52%,#00000000 ); /**/
+  background-repeat: no-repeat;
+  background-size: 300% 300%;
+  background-position: 150% 150%;
   font-family: JetBrains Mono ,'Courier New', Courier, monospace;
   display: inline-flex;
   align-items: center;
   color: white;
   text-decoration: none;
+  transition-property: background-position, color;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-radius: 50em 0 0 50em;
+  color: #ffffffff
 }
 .links > a:hover{
-  color: transparent;
+  background-position: 30% 30%;
 }
+.links >a:hover:nth-child(1){
+  color: #000000bf;
+}
+
+.links > a:hover:nth-child(2){
+  color: #01579bdd;
+}
+
+.links > a:hover:nth-child(3){
+  color: #1c511cbf;
+}
+
 a > i{
   font-size: 1.5em;
   margin-right: .25vmax;
 }
 sub, sup{
   font-size: 2px;
+}
+
+@media (max-width: 75em) {
+  h1 {
+    text-align: center;
+    font-size: clamp(3em, 8vmin, 9em);
+  }
+  h2 {
+    text-align: center;
+    font-size: clamp(2.5em, 6vmin, 7.5em);
+  }
+  h3 {
+    text-align: center;
+    font-size: clamp(2em, 5vmin, 8em);
+  }
+  p{
+    text-align: center;
+    font-size: clamp(1em, 3vmin, 3.5em);
+  }
+  .links{
+    flex-direction: column;
+    align-items: center;
+  }
+  .links > a{
+    flex-direction: row;
+    padding: 1.5em;
+    margin: 1em;
+    width: 60%;
+    text-align: center;
+    font-size: 1.75rem;
+    transition-duration: .25s;
+  }
 }
