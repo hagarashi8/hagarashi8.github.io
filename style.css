@@ -50,7 +50,12 @@ h3{
   height: 80vh;
 }
 
-h1 > span{
+.title-screen:has(h1>.gradiented:hover) *:not(h1:hover, .gradiented:hover){
+  opacity: 50%;
+}
+
+h1 > .gradiented{
+  opacity: 100%;
   color: transparent;
   background-size: 300% 100%;
   background-repeat: repeat;
@@ -63,7 +68,7 @@ h1 > span{
   transition-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
 
-h1 > span:hover{
+h1 > .gradiented:hover{
   background-position: right;
 }
 
@@ -85,7 +90,7 @@ code:hover{
   width: 100%;
   color: black;
   text-align: center;
-  background-image: linear-gradient(90deg, #ff7043,  #ba68c8, #ff7043);
+  background-image: linear-gradient(45deg, #ff7043,  #ba68c8, #ff7043);
 }
 
 .projects{
@@ -124,7 +129,7 @@ article > *:not(.links){
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(50deg, #f50057 , #ffab00 50%, #ffab00bb 50%,#ffab00bb 52%,#00000000 52%,#00000000 ); /**/
+  background: linear-gradient(50deg,#f50057 ,#f50057 10%, #ffab00 50%, #ffab00bb 50%,#ffab00bb 51%,#f5005788 51%,#f5005788 51.5%,#00000000 51.5%, #00000000 ); /**/
   background-repeat: no-repeat;
   background-size: 300% 300%;
   background-position: 150% 150%;
@@ -139,19 +144,21 @@ article > *:not(.links){
   border-radius: 50em 0 0 50em;
   color: #ffffffff
 }
+
 .links > a:hover{
   background-position: 30% 30%;
 }
+
 .links >a:hover:nth-child(1){
-  color: #000000bf;
+  color: #00000088;
 }
 
 .links > a:hover:nth-child(2){
-  color: #01579bdd;
+  color: #01579b88;
 }
 
 .links > a:hover:nth-child(3){
-  color: #1c511cbf;
+  color: #1c511c88;
 }
 
 a > i{
@@ -189,7 +196,7 @@ sub, sup{
     margin: 1em;
     width: 60%;
     text-align: center;
-    font-size: 1.75rem;
+    font-size: 1.95rem;
     transition-duration: .25s;
   }
 }
